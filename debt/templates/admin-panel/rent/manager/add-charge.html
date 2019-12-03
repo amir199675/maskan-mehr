@@ -1,0 +1,414 @@
+{% extends 'admin-panel/partial/main-panel.html' %}
+{% load static %}
+<!-- BEGIN: Main Menu-->
+{% block title %}
+    پنل ادمین|شارژ جدید
+{% endblock %}
+{% block body %}
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-wrapper">
+            <div class="content-wrapper-before"></div>
+            <div class="content-header row">
+                <div class="content-header-left col-md-8 col-12 mb-2 breadcrumb-new">
+                    <h3 class="content-header-title mb-0 d-inline-block">ایجاد شارژ برای ساکنین ({{ select_apartment.name }})</h3>
+
+                    <div class="breadcrumbs-top d-inline-block">
+
+                        <div class="breadcrumb-wrapper mr-1">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url 'Account:profile' %}">پنل مدیر ساختمان</a>
+                                </li>
+
+                                <li class="breadcrumb-item active">ایجاد شارژ ({{ select_apartment.name }})
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body"><!-- Form wizard with icon tabs section start -->
+                <section id="icon-tabs">
+
+
+                    <div class="row">
+
+                        <div class="col-12">
+
+                            <div class="card">
+
+                                <div class="card-header">
+
+                                    <h4 class="card-title">لطفا اطلاعات مربوطه را به دقت وارد نمایید</h4>
+                                    <a class="heading-elements-toggle"><i
+                                            class="la la-ellipsis-h font-medium-3"></i></a>
+                                    <div class="heading-elements">
+                                        <ul class="list-inline mb-0">
+                                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card-content collapse show">
+                                    <div class="card-body">
+                                        {% if error %}
+                                            <div class="alert round bg-danger alert-icon-left alert-dismissible mb-2"
+                                                 role="alert">
+                                                    <span class="alert-icon">
+                                                        <i class="ft-thumbs-down"></i>
+                                                    </span>
+                                                <button type="button" class="close" data-dismiss="alert"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                <strong>{{ message }}</strong>
+                                                <a href="#" class="alert-link">{{ info }}</a>
+
+                                            </div>
+                                        {% endif %}
+                                        {% if success %}
+                                            <div class="alert round bg-success alert-icon-left alert-dismissible mb-2"
+                                                 role="alert">
+                                                    <span class="alert-icon">
+                                                        <i class="ft-thumbs-up"></i>
+                                                    </span>
+                                                <button type="button" class="close" data-dismiss="alert"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                <strong>{{ message }}</strong>
+                                                <a href="#" class="alert-link">{{ info }}</a>
+                                            </div>
+                                        {% endif %}
+                                        <form action="" method="post" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="lastName3">عنوان شارژ :</label>
+                                                    <input type="text" class="form-control" id="lastName3" name="title">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="lastName3">مبلغ قابل پرداخت :</label>
+                                                    <input type="text" class="form-control" id="lastName3" name="price">
+                                                </div>
+                                            </div><div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="lastName3">مهلت پرداخت :</label>
+                                                    <input type="text" required class="usage pdp-el form-control"
+                                                                   pdp-id="pdp-4664685" name="pay_time">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <label for="lastName2">توضیحات :</label>
+                                                    <textarea cols="30" rows="10" class="form-control"
+                                                              placeholder="توضیحاتی در رابطه با پرداخت شارژ ..."
+                                                              name="description"></textarea>
+                                                </div>
+                                            </div>
+                                                <div class="col-lg-12" style="text-align: left">
+                                                    <button type="submit" class="btn btn-danger">ثبت کردن</button>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+
+    <!-- BEGIN: Customizer-->
+    <div class="customizer border-left-blue-grey border-left-lighten-4 d-none d-xl-block"><a class="customizer-close"
+                                                                                             href="#"><i
+            class="ft-x font-medium-3"></i></a><a class="customizer-toggle bg-primary box-shadow-3" href="#"
+                                                  id="customizer-toggle-setting"><i
+            class="ft-settings font-medium-3 spinner white"></i></a>
+        <div class="customizer-content p-2">
+            <h5 class="mt-1 mb-1 text-bold-500">تنظیمات رنگ ناوبری</h5>
+            <div class="navbar-color-options clearfix">
+                <div class="gradient-colors mb-1 clearfix">
+                    <div class="bg-gradient-x-purple-blue navbar-color-option" data-bg="bg-gradient-x-purple-blue"
+                         title="bg-gradient-x-purple-blue"></div>
+                    <div class="bg-gradient-x-purple-red navbar-color-option" data-bg="bg-gradient-x-purple-red"
+                         title="bg-gradient-x-purple-red"></div>
+                    <div class="bg-gradient-x-blue-green navbar-color-option" data-bg="bg-gradient-x-blue-green"
+                         title="bg-gradient-x-blue-green"></div>
+                    <div class="bg-gradient-x-orange-yellow navbar-color-option" data-bg="bg-gradient-x-orange-yellow"
+                         title="bg-gradient-x-orange-yellow"></div>
+                    <div class="bg-gradient-x-blue-cyan navbar-color-option" data-bg="bg-gradient-x-blue-cyan"
+                         title="bg-gradient-x-blue-cyan"></div>
+                    <div class="bg-gradient-x-red-pink navbar-color-option" data-bg="bg-gradient-x-red-pink"
+                         title="bg-gradient-x-red-pink"></div>
+                </div>
+                <div class="solid-colors clearfix">
+                    <div class="bg-primary navbar-color-option" data-bg="bg-primary" title="اولیه"></div>
+                    <div class="bg-success navbar-color-option" data-bg="bg-success" title="موفقیت"></div>
+                    <div class="bg-info navbar-color-option" data-bg="bg-info" title="اطلاعات"></div>
+                    <div class="bg-warning navbar-color-option" data-bg="bg-warning" title="هشدار"></div>
+                    <div class="bg-danger navbar-color-option" data-bg="bg-danger" title="خطر"></div>
+                    <div class="bg-blue navbar-color-option" data-bg="bg-blue" title="آبی"></div>
+                </div>
+            </div>
+
+            <hr>
+
+            <h5 class="my-1 text-bold-500">گزینه های طرح بندی</h5>
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-inline-block custom-control custom-radio mb-1 col-4">
+                        <input type="radio" class="custom-control-input bg-primary" name="layouts" id="default-layout"
+                               checked>
+                        <label class="custom-control-label" for="default-layout">پیش فرض</label>
+                    </div>
+                    <div class="d-inline-block custom-control custom-radio mb-1 col-4">
+                        <input type="radio" class="custom-control-input bg-primary" name="layouts" id="fixed-layout">
+                        <label class="custom-control-label" for="fixed-layout">ثابت</label>
+                    </div>
+                    <div class="d-inline-block custom-control custom-radio mb-1 col-4">
+                        <input type="radio" class="custom-control-input bg-primary" name="layouts" id="static-layout">
+                        <label class="custom-control-label" for="static-layout">استاتیک</label>
+                    </div>
+                    <div class="d-inline-block custom-control custom-radio mb-1">
+                        <input type="radio" class="custom-control-input bg-primary" name="layouts" id="boxed-layout">
+                        <label class="custom-control-label" for="boxed-layout">جعبه ای</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-inline-block custom-control custom-checkbox mb-1">
+                        <input type="checkbox" class="custom-control-input bg-primary" name="right-side-icons"
+                               id="right-side-icons">
+                        <label class="custom-control-label" for="right-side-icons">آیکون سمت راست</label>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <h5 class="mt-1 mb-1 text-bold-500">پس زمینه منوی نوار کناری</h5>
+            <!-- <div class="sidebar-color-options clearfix">
+                <div class="bg-black sidebar-color-option" data-sidebar="menu-dark" title="مشکی"></div>
+                <div class="bg-white sidebar-color-option" data-sidebar="menu-light" title="سفید"></div>
+            </div> -->
+            <div class="row sidebar-color-options ml-0">
+                <label for="sidebar-color-option" class="card-title font-medium-2 mr-2">حالت سفید</label>
+                <div class="text-center mb-1">
+                    <input type="checkbox" id="sidebar-color-option" class="switchery" data-size="xs"/>
+                </div>
+                <label for="sidebar-color-option" class="card-title font-medium-2 ml-2">حالت تاریک</label>
+            </div>
+
+            <hr>
+
+            <label for="collapsed-sidebar" class="font-medium-2">سقوط منو</label>
+            <div class="float-right">
+                <input type="checkbox" id="collapsed-sidebar" class="switchery" data-size="xs"/>
+            </div>
+
+            <hr>
+
+            <!--Sidebar Background Image Starts-->
+            <h5 class="mt-1 mb-1 text-bold-500">تصویر پس زمینه نوار کناری</h5>
+            <div class="cz-bg-image row">
+                <div class="col mb-3">
+                    <img src="../../../app-assets/images/backgrounds/04.jpg" class="rounded sidiebar-bg-img" width="50"
+                         height="100" alt="background image">
+                </div>
+                <div class="col mb-3">
+                    <img src="../../../app-assets/images/backgrounds/01.jpg" class="rounded sidiebar-bg-img" width="50"
+                         height="100" alt="background image">
+                </div>
+                <div class="col mb-3">
+                    <img src="../../../app-assets/images/backgrounds/02.jpg" class="rounded sidiebar-bg-img" width="50"
+                         height="100" alt="background image">
+                </div>
+                <div class="col mb-3">
+                    <img src="../../../app-assets/images/backgrounds/05.jpg" class="rounded sidiebar-bg-img" width="50"
+                         height="100" alt="background image">
+                </div>
+            </div>
+            <!--Sidebar Background Image Ends-->
+
+            <!--Sidebar BG Image Toggle Starts-->
+            <div class="sidebar-image-visibility">
+                <div class="row ml-0">
+                    <label for="toggle-sidebar-bg-img" class="card-title font-medium-2 mr-2">مخفی کردن تصویر</label>
+                    <div class="text-center mb-1">
+                        <input type="checkbox" id="toggle-sidebar-bg-img" class="switchery" data-size="xs" checked/>
+                    </div>
+                    <label for="toggle-sidebar-bg-img" class="card-title font-medium-2 ml-2">نمایش تصویر</label>
+                </div>
+            </div>
+            <!--Sidebar BG Image Toggle Ends-->
+
+            <hr>
+
+            <div class="row mb-2">
+                <!-- <div class="col">
+                    <a href="https://www.rtl-theme.com/author/barat/" class="btn btn-danger btn-block box-shadow-1" target="_blank">اکنون بخرید</a>
+                </div> -->
+                <div class="col">
+                    <a href="https://www.rtl-theme.com/author/barat/" class="btn btn-primary btn-block box-shadow-1"
+                       target="_blank">تم های بیشتر</a>
+                </div>
+            </div>
+            <div class="text-center">
+                <button id="twitter" class="btn btn-social-icon btn-twitter sharrre mr-1"><i class="la la-twitter"></i>
+                </button>
+                <button id="facebook" class="btn btn-social-icon btn-facebook sharrre mr-1"><i
+                        class="la la-facebook"></i></button>
+                <button id="google" class="btn btn-social-icon btn-google sharrre"><i class="la la-google"></i></button>
+            </div>
+        </div>
+    </div>
+    <!-- End: Customizer-->
+
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="{% static 'admin-panel-static/app-assets/vendors/js/vendors.min.js' %}"
+            type="text/javascript"></script>
+    <script src="{% static 'admin-panel-static/app-assets/vendors/js/forms/toggle/switchery.min.js' %}"
+            type="text/javascript"></script>
+    <script src="{% static 'admin-panel-static/app-assets/js/scripts/forms/switch.min.js' %}"
+            type="text/javascript"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{% static 'admin-panel-static/app-assets/vendors/js/extensions/jquery.steps.min.js' %}"
+            type="text/javascript"></script>
+    <script src="{% static 'admin-panel-static/app-assets/vendors/js/pickers/dateTime/moment-with-locales.min.js' %}"
+            type="text/javascript"></script>
+    <script src="{% static 'admin-panel-static/app-assets/vendors/js/pickers/daterange/daterangepicker.js' %}"
+            type="text/javascript"></script>
+    <script src="{% static 'admin-panel-static/app-assets/vendors/js/forms/validation/jquery.validate.min.js' %}"
+            type="text/javascript"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="{% static 'admin-panel-static/app-assets/js/core/app-menu.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'admin-panel-static/app-assets/js/core/app.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'admin-panel-static/app-assets/js/scripts/customizer.min.js' %}"
+            type="text/javascript"></script>
+    <script src="{% static 'admin-panel-static/app-assets/vendors/js/jquery.sharrre.js' %}"
+            type="text/javascript"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="{% static 'admin-panel-static/app-assets/js/scripts/forms/wizard-steps.min.js' %}"
+            type="text/javascript"></script>
+
+
+     <!--for datepicker-->
+    <script src="{% static 'date/js/jquery-1.10.1.min.js' %}"></script>
+    <script src="{% static 'date/js/persianDatepicker.js' %}"></script>
+    <script>
+        $(function () {
+            //usage
+            $(".usage").persianDatepicker();
+
+            //themes
+            $("#pdpDefault").persianDatepicker({alwaysShow: true,});
+            $("#pdpLatoja").persianDatepicker({theme: "latoja", alwaysShow: true,});
+            $("#pdpLightorang").persianDatepicker({theme: "lightorang", alwaysShow: true,});
+            $("#pdpMelon").persianDatepicker({theme: "melon", alwaysShow: true,});
+            $("#pdpDark").persianDatepicker({theme: "dark", alwaysShow: true,});
+
+            //size
+            $("#pdpSmall").persianDatepicker({cellWidth: 14, cellHeight: 12, fontSize: 8});
+            $("#pdpBig").persianDatepicker({cellWidth: 78, cellHeight: 60, fontSize: 18});
+
+            //formatting
+            $("#pdpF1").persianDatepicker({formatDate: "YYYY/MM/DD hh:mm:ss:ms"});
+            $("#pdpF2").persianDatepicker({formatDate: "YYYY-0M-0D"});
+            $("#pdpF3").persianDatepicker({formatDate: "YYYY-NM-DW|ND", isRTL: !0});
+
+            //startDate & endDate
+            $("#pdpStartEnd").persianDatepicker({startDate: "1394/11/12", endDate: "1395/5/5"});
+            $("#pdpStartToday").persianDatepicker({startDate: "today", endDate: "1410/11/5"});
+            $("#pdpEndToday").persianDatepicker({startDate: "1397/11/12", endDate: "today"});
+
+            //selectedBefor & selectedDate
+            $("#pdpSelectedDate").persianDatepicker({selectedDate: "1404/1/1", alwaysShow: !0});
+            $("#pdpSelectedBefore").persianDatepicker({selectedBefore: !0});
+            $("#pdpSelectedBoth").persianDatepicker({selectedBefore: !0, selectedDate: "1395/5/5"});
+
+            //jdate & gdate attributes
+            $("#pdp-data-jdate").persianDatepicker({
+                onSelect: function () {
+                    alert($("#pdp-data-jdate").attr("data-gdate"));
+                }
+            });
+            $("#pdp-data-gdate").persianDatepicker({
+                showGregorianDate: true,
+                onSelect: function () {
+                    alert($("#pdp-data-gdate").attr("data-jdate"));
+                }
+            });
+
+
+            //Gregorian date
+            $("#pdpGregorian").persianDatepicker({showGregorianDate: true});
+
+            // jDateFuctions
+            // var jdf = new jDateFunctions();
+            // var pd = new persianDate();
+            // $("#pdpjdf-1").persianDatepicker({
+            //     onSelect: function () {
+            //         $("#pdpjdf-1").val(jdf.getJulianDayFromPersian(pd.parse($("#pdpjdf-1").val())));
+            //         $("#pdpjdf-2").val(jdf.getLastDayOfPersianMonth(pd.parse($("#pdpjdf-1").val())));
+            //         $("#pdpjdf-3").val(jdf.getPCalendarDate($("#pdpjdf-1").val()));
+            //     }
+            // });
+
+
+            // //convert jalali date to miladi
+            // $("#year, #month, #day").on("change", function () {
+            //     $("#month").val() > 6 ? $("#day-31").hide() : $("#day-31").show();;
+            //     showConverted();
+            // });
+
+            // $("#year").keyup(showConverted);
+            //
+            // function showConverted() {
+            //     try{
+            //         var pd = new persianDate();
+            //         pd.year = parseInt($("#year").val());
+            //         pd.month = parseInt($("#month").val());
+            //         pd.date = parseInt($("#day").val());
+            //
+            //         var jdf = new jDateFunctions();
+            //         $("#converted").html("Gregorian :  " + jdf.getGDate(pd)._toString("YYYY/MM/DD") + "     [" + jdf.getGDate(pd) + "]<br />Julian:  " + jdf.getJulianDayFromPersian(pd));
+            //
+            //     } catch (e) {
+            //         $("#converted").html("Enter the year correctly!");
+            //     }
+            // }
+
+
+            //startDate is tomarrow
+            var p = new persianDate();
+            $("#pdpStartDateTomarrow").persianDatepicker({
+                startDate: p.now().addDay(1).toString("YYYY/MM/DD"),
+                endDate: p.now().addDay(4).toString("YYYY/MM/DD")
+            });
+
+
+        });
+    </script>
+{% endblock %}

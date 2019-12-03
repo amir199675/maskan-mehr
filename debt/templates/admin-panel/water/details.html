@@ -1,0 +1,141 @@
+{% extends 'admin-panel/partial/main-panel.html' %}
+{% load static %}
+{% load main_tags %}
+<!-- BEGIN: Main Menu-->
+{% block title %}
+    پنل ادمین|{{ select_rent.add_rent_id.title }}
+{% endblock %}
+{% block body %}
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-wrapper">
+            <div class="content-wrapper-before"></div>
+            <div class="content-header row">
+                <div class="content-header-left col-md-8 col-12 mb-2 breadcrumb-new">
+                    <h3 class="content-header-title mb-0 d-inline-block">سهم آب</h3>
+                    <div class="breadcrumbs-top d-inline-block">
+                        <div class="breadcrumb-wrapper mr-1">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="">
+                                    {% if request.user.groups.count %}
+                                        {% for group in request.user.groups.all %}
+                                            {% if group.name == 'Admin' %}
+                                                پنل ادمین
+                                            {% else %}
+                                                پنل کاربری
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% else %}
+                                        پنل کاربری
+                                    {% endif %}
+                                </a>
+
+                                </li>
+                                <li class="breadcrumb-item active">{{ select_rent.add_rent_id.title }}
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body"><!-- Base style table -->
+
+
+                <div class="row">
+
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">{{ select_rent.add_rent_id.title }}</h4>
+                                <span class="text-medium-1 danger line-height-2 text-uppercase">{{ select_rent.add_rent_id.apartment_id.name }}</span>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0 display-block">
+                                        <li>
+                                            <a
+                                                    href="#" target="_blank"
+                                                    {% if select_rent.add_rent_id.pay_time < server_date and select_rent.method == 'NotPaid' %}
+                                                    class="btn btn-md btn-danger box-shadow-2 round btn-min-width pull-right"
+                                                    {% elif select_rent.method == 'Online' or select_rent.method == 'Cash' %}
+                                                    class="btn btn-md btn-success box-shadow-2 round btn-min-width pull-right"
+                                                    {% else %}
+                                                    class="btn btn-md btn-warning box-shadow-2 round btn-min-width pull-right"
+                                                    {% endif %}>
+
+                                                {% if select_rent.add_rent_id.pay_time < server_date and select_rent.method == 'NotPaid' %}
+                                                    پرداخت نشده عقب افتاده
+                                                {% elif select_rent.method == 'Online' or select_rent.method == 'Cash' %}
+                                                    پرداخت شده
+                                                {% else %}
+                                                    پرداخت نشده زمان دار
+                                                {% endif %}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-content collapse show">
+                                <div class="card-body pt-0 pb-1">
+                                    <p>
+                                        {{ select_rent.add_rent_id.description }}
+                                    </p>
+
+                                    <div class="row" style="text-align: center !important;margin-top: 20px;">
+                                        <button style="margin: auto"
+                                                {% if select_rent.method == 'NotPaid' %}
+                                                    class="btn btn-md btn-success box-shadow-2 round btn-min-width pull-right"
+                                                {% else %}
+                                                    class="btn btn-md btn-success box-shadow-2 round btn-min-width pull-right"
+                                                {% endif %}>
+                                            {% if select_rent.method == 'NotPaid' %}
+                                                پرداخت
+                                            {% else %}
+                                                با تشکر پرداخت شما
+                                            {% endif %}
+
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+
+
+
+    <script src="{% static 'admin-panel-static/app-assets/vendors/js/vendors.min.js' %}"
+            type="text/javascript"></script>
+    <script src="{% static 'admin-panel-static/app-assets/vendors/js/forms/toggle/switchery.min.js' %}"
+            type="text/javascript"></script>
+    <script src="{% static 'admin-panel-static/app-assets/js/scripts/forms/switch.min.js' %}"
+            type="text/javascript"></script>
+    <!-- BEGIN Vendor JS-->
+
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{% static 'admin-panel-static/app-assets/vendors/js/tables/datatable/datatables.min.js' %}"
+            type="text/javascript"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- END: Page Vendor JS-->
+    <script src="{% static 'admin-panel-static/app-assets/js/scripts/tables/datatables/datatable-styling.min.js' %}"
+            type="text/javascript"></script>
+
+    <!-- BEGIN: Theme JS-->
+    <script src="{% static 'admin-panel-static/app-assets/js/core/app-menu.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'admin-panel-static/app-assets/js/core/app.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'admin-panel-static/app-assets/js/scripts/customizer.min.js' %}"
+            type="text/javascript"></script>
+    <script src="{% static 'admin-panel-static/app-assets/vendors/js/jquery.sharrre.js' %}"
+            type="text/javascript"></script>
+    <!-- END: Theme JS-->
+
+{% endblock %}
+<!-- END: Body-->

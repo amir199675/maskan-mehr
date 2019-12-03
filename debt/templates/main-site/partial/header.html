@@ -1,0 +1,24 @@
+<nav class="colorlib-nav" role="navigation">
+    <div class="top-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2">
+                    <div id="colorlib-logo"><a href="{% url 'Debt:index' %}">مدیسا</a></div>
+                </div>
+                <div class="col-xs-10 text-right menu-1">
+                    <ul>
+                        <li {% if index %}class="active"{% endif %} ><a {% if black %} style="color: black" {% endif %} href="">صفحه اصلی</a></li>
+                        <li {% if about_us %}class="active"{% endif %} ><a {% if black %} style="color: black" {% endif %} href="">درباره ما</a></li>
+
+                        <li><a {% if black %} style="color: black" {% endif %} href="services.html">راهنما</a></li>
+                        <li {% if all_news %}class="active"{% endif %} ><a {% if black %} style="color: black" {% endif %} href="">اخبار</a></li>
+
+                        <li><a {% if black %} style="color: black" {% endif %} href="contact.html">ارتباط با ما</a></li>
+                        <li {% if search %}class="active"{% endif %}><a {% if black %} style="color: black" {% endif %} href="">جستجوی متوفی</a></li>
+                        <li ><a {% if black %} style="color: black" {% endif %} href="{% url 'Account:login' %}">ورود</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

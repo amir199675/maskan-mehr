@@ -1,0 +1,46 @@
+body{
+    direction: rtl;
+    padding: 100px;
+}
+.an-logo img {
+    width: 14%;
+    text-align: right;
+}
+.an-logo {
+    width: 100%;
+    text-align: right;
+}
+.an-adress-phone{
+    float: left;
+    width: 80%;
+}
+.an-first-col{
+    width: 50%;
+    float: right;
+}
+.an-all-col{
+    width: 100%;
+}
+.an-secound-col{
+    width: 50%;
+    float: left;
+    margin-top: 45px;
+}
+hr{
+    width: 100%;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

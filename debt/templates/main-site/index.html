@@ -1,0 +1,405 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>سیستم مدیریت آنلاین جتمع</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="amin alinejad"/>
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:image" content=""/>
+    <meta name="twitter:url" content=""/>
+    <meta name="twitter:card" content=""/>
+
+    {% include 'main-site/partial/links.html' %}
+
+</head>
+<body>
+
+<div class="colorlib-loader"></div>
+
+<div id="page">
+    {% include 'main-site/partial/header.html' %}
+    {% if sliders.count %}
+        <aside id="colorlib-hero">
+            <div class="flexslider">
+                <ul class="slides">
+                    {% for slide in sliders %}
+
+                        <li style="background-image: url({{ slide.picture.url }});">
+                            <div class="overlay"></div>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
+                                        <div class="slider-text-inner text-center">
+                                            <h2>{{ slide.title }}</h2>
+                                            <h1>{{ slide.description }}</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+        </aside>
+    {% endif %}
+    <div style="direction: rtl" id="colorlib-intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-push-4 animate-box colorlib-heading animate-box">
+                    <span class="sm">{{ message }}</span>
+                    <h2><span class="thin">بهشت زهرا </span> <span class="thick">شهرستان دامغان</span></h2>
+                </div>
+                <div class="col-md-4 col-md-pull-4 animate-box">
+                    <div class="box text-center">
+                        <span class="num">25</span>
+                        <span class="yr">سال</span>
+                        <span class="thin">تجربه</span>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-box">
+                    <p>
+                        شهرداری اصفهان درسال ۱۳۶۳ با این باور که حفظ ونگهداری تخت فولاد بعنوان سومین آرامستان جهان تشيع
+                        که گنجينه اي گرانبها از معاريف ، ابرار، ونوابغ روزگاران پيش درآن آرميده اند يکي از وظايف اصلي
+                        شهرداريست اقدام به احداث آرامستان جدید شهر بنام باغ رضوان نمود وبا اینکار گام استواری درساماندهی
+                        اماکن ودامنه هاي شهري برداشت . آرامستان شهرداری اصفهان( باغ رضوان) در۱۲ کیلومتری شرق شهر اصفهان
+                        قرار دارد وخدمات دفن اموات مسلمین در زميني بامساحتي بالغ بر۱۳۰۵ هکتار درآن عرضه مي شود. سازمان
+                        آرامستانهای شهرداری اصفهان یکی ازسازمانهاي تابعه شهرداري اصفهان بوده وخدمات آن مشتمل بر
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="colorlib-project">
+        <div class="container">
+            <div class="row">
+                <div style="direction: rtl" class="col-md-4 animate-box colorlib-heading animate-box">
+                    <span class="sm">درباره ما</span>
+                    <h2><span class="thin">شرکت باغ رضوان</span></h2>
+                    <p>
+                        افزايش سطح رفاه بازماندگان هنگام مراجعه به سازمان و ايجاد بستري مناسب و موثر به منظور عبرت پذيري
+                        زائران از محيط آرامستانها و تجلي ياد معاد در زندگي روزمره مراجعان مي باشد. آرامستان باغ رضوان در
+                        ۳ فاز که قطعات ۱ تا۴۵ در فاز۱ بمساحت ۱۶۰ هکتار و قطعات ۵۰ تا ۶۶ در فاز۲ بمساحت ۳۵ هکتار و قطعات
+                        ۷۰ تا ۹۰ بمساحت ۵۰ هکتار می باشد.
+                    </p>
+                    <p style="color: #FFCD00"><i class="icon-arrow-right3"></i>چشم انداز های شرکت </p>
+                </div>
+                <div class="col-md-7 col-md-push-1">
+                    <div class="row">
+                        <div class="col-md-12 animate-box">
+                            <div class="owl-carousel owl-carousel2 project-wrap">
+                                <div class="item">
+                                    <a href="images/building-1.jpg" class="project image-popup-link"
+                                       style="background-image: url(images/building-1.jpg);">
+                                        <div class="desc-t">
+                                            <div class="desc-tc">
+                                                <div class="desc">
+                                                    <h3><span><small>1</small></span>آسودگی برای <br> مشتریان</h3>
+                                                    <p>شرکت در نظر دارد تا تمامی هموطنان دامغان کار های خود را در آسودگی
+                                                        انجام دهند</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="images/building-2.jpg" class="project image-popup-link"
+                                       style="background-image: url(images/building-2.jpg);">
+                                        <div class="desc-t">
+                                            <div class="desc-tc">
+                                                <div class="desc">
+                                                    <h3><span><small>2</small></span>آسودگی برای <br> مشتریان</h3>
+                                                    <p>شرکت در نظر دارد تا تمامی هموطنان دامغان کار های خود را در آسودگی
+                                                        انجام دهند</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="images/building-3.jpg" class="project image-popup-link"
+                                       style="background-image: url(images/building-3.jpg);">
+                                        <div class="desc-t">
+                                            <div class="desc-tc">
+                                                <div class="desc">
+                                                    <h3><span><small>3</small></span>آسودگی برای <br> مشتریان</h3>
+                                                    <p>شرکت در نظر دارد تا تمامی هموطنان دامغان کار های خود را در آسودگی
+                                                        انجام دهند</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="colorlib-counter" class="colorlib-counters" style="background-image: url({% static 'images/havae.jpg' %});"
+         data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+            </div>
+            <div class="row">
+                <div class="col-md-3 text-center animate-box">
+                    <span class="icon"><i class="flaticon-skyline"></i></span>
+                    <span class="colorlib-counter js-counter" data-from="0" data-to="{{ place_count }}"
+                          data-speed="5000" data-refresh-interval="50"></span>
+                    <span class="colorlib-counter-label">تعداد قبور</span>
+                </div>
+                <div class="col-md-3 text-center animate-box">
+                    <span class="icon"><i class="flaticon-engineer"></i></span>
+                    <span class="colorlib-counter js-counter" data-from="0" data-to="{{ ferdos_deceased_count }}" data-speed="5000"
+                          data-refresh-interval="50"></span>
+                    <span class="colorlib-counter-label">تعداد متوفی فردوس رضا</span>
+                </div>
+                <div class="col-md-3 text-center animate-box">
+                    <span class="icon"><i class="flaticon-architect-with-helmet"></i></span>
+                    <span class="colorlib-counter js-counter" data-from="0" data-to="{{ out_deceased_count }}" data-speed="5000"
+                          data-refresh-interval="50"></span>
+                    <span class="colorlib-counter-label">تعداد متوفی اعزامی</span>
+                </div>
+                <div class="col-md-3 text-center animate-box">
+                    <span class="icon"><i class="flaticon-worker"></i></span>
+                    <span class="colorlib-counter js-counter" data-from="0" data-to="{{ users_count }}" data-speed="5000"
+                          data-refresh-interval="50"></span>
+                    <span class="colorlib-counter-label">مشتریان</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="direction: rtl" id="colorlib-services" class="colorlib-light-grey">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="wrap">
+                            <div class="col-md-6 animate-box">
+                                <div class="services">
+										<span class="icon">
+											<i class="flaticon-engineer"></i>
+										</span>
+                                    <div class="desc">
+                                        <h3>سامانه رفاهی و پرسنلی</h3>
+                                        <p>
+                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                            طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
+                                            لازم است و برای شرایط فعلی تکنولوژی
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 animate-box">
+                                <div class="services">
+										<span class="icon">
+											<i class="flaticon-engineering"></i>
+										</span>
+                                    <div class="desc">
+                                        <h3>سامانه کنترل تردد</h3>
+                                        <p>
+                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                            طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
+                                            لازم است و برای شرایط فعلی تکنولوژی
+                                        </p></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 animate-box">
+                                <div class="services">
+										<span class="icon">
+											<i class="flaticon-skyline"></i>
+										</span>
+                                    <div class="desc">
+                                        <h3>سامانه GIS</h3>
+                                        <p>
+                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                            طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
+                                            لازم است و برای شرایط فعلی تکنولوژی
+                                        </p></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 animate-box">
+                                <div class="services">
+										<span class="icon">
+											<i class="flaticon-crane"></i>
+										</span>
+                                    <div class="desc">
+                                        <h3>سامانه مرکز بهداشت</h3>
+                                        <p>
+                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                            طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
+                                            لازم است و برای شرایط فعلی تکنولوژی
+                                        </p></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 animate-box">
+                                <div class="services">
+										<span class="icon">
+											<i class="flaticon-sketch"></i>
+										</span>
+                                    <div class="desc">
+                                        <h3>اتوماسیون فرزین</h3>
+                                        <p>
+                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                            طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
+                                            لازم است و برای شرایط فعلی تکنولوژی
+                                        </p></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 animate-box">
+                                <div class="services">
+										<span class="icon">
+											<i class="flaticon-conveyor"></i>
+										</span>
+                                    <div class="desc">
+                                        <h3>اتوماسیون گام</h3>
+                                        <p>
+                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                            طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
+                                            لازم است و برای شرایط فعلی تکنولوژی
+                                        </p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-box colorlib-heading animate-box">
+                    <span class="sm">باغ رضوان</span>
+                    <h2><span class="thin">لیست خدمات</span> <span class="thick">ارایه شده</span></h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div style="direction: rtl" id="colorlib-blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row" style="direction: rtl">
+                        <div class="wrap" style="direction: rtl">
+                            {% for new in news %}
+                                <div class="blog-entry animate-box" style="direction: rtl">
+                                    <img src="{{ new.picture.url }}" class="blog-img" alt="">
+
+                                    <div class="desc">
+                                        <span>{{ new.created }} {{ new.created }}</span>
+                                        <h2><a href="">{{ new.content|truncatewords:50 }}</a></h2>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-box colorlib-heading animate-box">
+                    <span class="sm">اخرین اخبار</span>
+                    <h2><span class="thin">با ما</span> <span class="thick">همراه باشید</span></h2>
+                    <p>آخرین اخبار ایران و جهان</p>
+                    <p><a href="blog.html"><i class="icon-arrow-right3">مشاهده تمامی خبرها</i></a></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="colorlib-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-push-8 animate-box colorlib-heading animate-box">
+                    <span class="sm" style="direction: rtl">تیم برنامه نویس</span>
+                    <h2 style="direction: rtl"><span class="thin">تیم</span> <span class="thick">مهندسین</span></h2>
+                    <p style="direction: rtl">
+                        زیر نظر شرکت آباکو.
+                    </p>
+                </div>
+                <div class="col-md-8 col-md-pull-4">
+                    <div class="row">
+                        <div class="wrap-2">
+                            <div class="col-md-6 text-center animate-box">
+                                <div class="staff staff-img" style="background-image: url({% static 'images/amir.jpg' %});">
+                                    <a href="#" class="desc">
+                                        <h3>امیر درخشان فر</h3>
+                                        <span style="direction: rtl">برنامه نویس back-end</span>
+                                        <div class="parag" style="direction: rtl">
+                                            <p>تحت فریم ورک django یکی ز قدرتمند ترین فریم ورک های تحت وب پایتون .</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 text-center animate-box">
+                                <div class="staff staff-img" style="background-image: url({% static 'images/amin.jpg' %});">
+                                    <a href="#" class="desc">
+                                        <h3>امین علی نژاد</h3>
+                                        <span style="direction: rtl">برنامه نویس front-end</span>
+                                        <div class="parag" style="direction: rtl">
+                                            <p>با ظاهری شکیل و زیبا و استفاده از پنل ادمین قدرتمند.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="colorlib-testimony" class="colorlib-light-grey">
+        <div class="container">
+            <div class="row">
+                <div style="direction: rtl" class="col-md-4 animate-box colorlib-heading animate-box">
+                    <h2><span class="thin">سخن افراد</span> <span class="thick">مهم</span></h2>
+                </div>
+                <div class="col-md-7 col-md-push-1">
+                    <div class="row animate-box">
+                        <span class="icon"><i class="icon-quotes-left"></i></span>
+                        <div class="owl-carousel1">
+
+                            {% for hadith in ahadith %}
+                                <div class="item">
+                                    <div class="testimony-slide active">
+                                        <div class="testimony-wrap">
+                                            <figure>
+                                                <img src="{{ hadith.picture.url }}" alt="user">
+                                            </figure>
+                                            <blockquote>
+                                                <span>{{ hadith.name }}</span>
+                                                <p>{{ hadith.content }}</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% include 'main-site/partial/footer.html' %}
+</div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+</div>
+
+</body>
+</html>
+
