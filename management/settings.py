@@ -26,7 +26,8 @@ SECRET_KEY = 'jd2vij(lkns1g+8##ionhlx3ubumbuco0d3d%-_%mkf1**(uy0'
 # DEBUG = True
 DEBUG = False
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['www.modisa-mehr.ir','modisa-mehr.ir','http://modisa-mehr.ir/','http://modisa-mehr.ir/',]
+# ALLOWED_HOSTS = ['www.modisa-mehr.ir','modisa-mehr.ir','http://modisa-mehr.ir/','http://modisa-mehr.ir/',]
+ALLOWED_HOSTS = ['79.137.127.154','localhost']
 
 
 AUTH_USER_MODEL = 'account.MyUser'
