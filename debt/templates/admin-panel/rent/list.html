@@ -92,7 +92,7 @@
                                                     <tr
                                                             {% if rent.add_rent_id.pay_time < server_date and rent.method == 'NotPaid' %}
                                                                 style="background-color: rgba(100%,50%,50%,.2)"{% elif rent.method == 'Online' or rent.method == 'Cash' %}
-                                                                style="background-color: rgba(50%,100%,50%,.2)"{% endif %}>
+                                                                style=" background-color: rgba(50%,100%,50%,.2)"{% endif %}>
 
                                                         <th>
                                                             <a href="{% url 'Debt:rent-details' rent.id %}">{{ rent.add_rent_id.title }}</a>
