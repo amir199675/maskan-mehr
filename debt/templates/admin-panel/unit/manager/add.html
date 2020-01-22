@@ -1,0 +1,269 @@
+{% extends 'admin-panel/partial/select_apartment.html' %}
+{% load static %}
+{% load main_tags %}
+<!-- BEGIN: Main Menu-->
+{% block title %}
+    پنل ادمین|اضافه کردن واحد
+{% endblock %}
+{% block content %}
+
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-wrapper">
+            <div class="content-wrapper-before"></div>
+            <div class="content-header row">
+                <div class="content-header-left col-md-8 col-12 mb-2 breadcrumb-new">
+                    <h3 class="content-header-title mb-0 d-inline-block">اضافه کردن واحد</h3>
+                    <div class="breadcrumbs-top d-inline-block">
+                        <div class="breadcrumb-wrapper mr-1">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="">پنل ادمین</a>
+                                </li>
+                                <li class="breadcrumb-item active">اضافه کردن واحد
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body"><!-- Base style table -->
+                <section id="base-style">
+
+
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <div class="row">
+
+                            <div class="col-12">
+                                <div class="card">
+
+                                    <div class="card-header">
+                                        <h4 class="card-title">ایجاد واحد مسکونی</h4>
+                                        <a class="heading-elements-toggle"><i
+                                                class="la la-ellipsis-v font-medium-3"></i></a>
+                                        <div class="heading-elements">
+                                            <ul class="list-inline mb-0">
+                                                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                                <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-content collapse show">
+                                        <div class="card-body card-dashboard">
+                                            {% for warning in warnings %}
+                                                <div class="alert round alert-secondary alert-icon-left alert-dismissible mb-2"
+                                                     role="alert">
+                                                    <span class="alert-icon">
+                                                        <i class="ft-mic black"></i>
+                                                    </span>
+                                                    <button type="button" class="close" data-dismiss="alert"
+                                                            aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    {{ warning }}
+                                                </div>
+                                            {% endfor %}
+                                            {% if error %}
+                                                <div class="alert round bg-danger alert-icon-left alert-dismissible mb-2"
+                                                     role="alert">
+                                                    <span class="alert-icon">
+                                                        <i class="ft-thumbs-down"></i>
+                                                    </span>
+                                                    <button type="button" class="close" data-dismiss="alert"
+                                                            aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    <strong>{{ message }}</strong>
+                                                    <a href="" class="alert-link"></a>
+
+                                                </div>
+                                            {% endif %}
+                                            {% if success %}
+                                                <div class="alert round bg-success alert-icon-left alert-dismissible mb-2"
+                                                     role="alert">
+                                                    <span class="alert-icon">
+                                                        <i class="ft-thumbs-up"></i>
+                                                    </span>
+                                                    <button type="button" class="close" data-dismiss="alert"
+                                                            aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    <strong>{{ message }}</strong>
+                                                    <a href=""
+                                                       class="alert-link">{{ info }}</a>
+                                                </div>
+                                            {% endif %}
+
+
+                                            <fieldset>
+                                                <div class="card-content">
+                                                    <div class="card-body">
+
+                                                        <div class="tab-content px-1 pt-1">
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="firstName2">خریدار :</label>
+                                                                        <select id="single"
+                                                                                class="js-states form-control" name="buyer">
+                                                                            <option></option>
+                                                                            {% for buyer in buyers %}
+                                                                                <option value="{{ buyer.id }}">{{ buyer.get_full_name }} {{ buyer.id }} {{ buyer.national_number }} {{ buyer.phone_number }}</option>
+                                                                            {% endfor %}
+
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="date2">متوفی مربوطه :</label>
+                                                                        <select id="single2"
+                                                                                class="js-states form-control" name="deceased">
+                                                                            <option></option>
+                                                                            {% for deceased in deceaseds %}
+                                                                                <option value="{{ deceased.id }}">{{ deceased.get_full_name }} {{ deceased.id }} {{ deceased.national_number }} {{ deceased.phone_number }}</option>
+                                                                            {% endfor %}
+
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+{#                                                                    <div class="form-group">#}
+{#                                                                        <label for="date2">خدمات :</label>#}
+{#                                                                        <select id="multiple"#}
+{#                                                                                class="js-states form-control">#}
+{##}
+{#                                                                            {% for service in services %}#}
+{#                                                                                <option value="{{ service.code }}">{{ service.code }} {{ service.name }} {{ service.price }}</option>#}
+{#                                                                            {% endfor %}#}
+{##}
+{#                                                                        </select>#}
+{#                                                                    </div>#}
+                                                                    <div class="table-responsive">
+                                                                        <table style="text-align: center;"
+                                                                               class="table table-striped table-bordered base-style">
+                                                                            <thead>
+                                                                            <tr>
+                                                                                <th>کد سرویس</th>
+                                                                                <th>نام</th>
+                                                                                <th>قیمت</th>
+                                                                                <th>انتخاب</th>
+                                                                            </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                            {% for service in services %}
+                                                                                <tr>
+                                                                                    <th style="vertical-align: middle;">
+                                                                                        {{ service.code }}
+                                                                                    </th>
+                                                                                    <th style="vertical-align: middle;">
+                                                                                        {{ service.name }}</th>
+                                                                                    <td style="vertical-align: middle;">
+                                                                                        {{ service.price }}</td>
+                                                                                    <td style="vertical-align: middle;">
+                                                                                        <input type="checkbox"
+                                                                                               value="{{ service.id }}Amir:D"
+                                                                                               name="serves"></td>
+
+
+                                                                                </tr>
+                                                                            {% endfor %}
+                                                                            </tbody>
+                                                                            <tfoot>
+                                                                            <tr>
+                                                                                <th>کد سرویس</th>
+                                                                                <th>نام</th>
+                                                                                <th>قیمت</th>
+                                                                                <th>انتخاب</th>
+                                                                            </tr>
+                                                                            </tfoot>
+                                                                        </table>
+
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </fieldset>
+
+                                            <div class="col-lg-6" style="text-align: left">
+                                                <button type="submit" class="btn btn-danger">ثبت کردن</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+
+                </section>
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+
+    {% include 'admin-panel/partial/customizer.html' %}
+
+    <script src="{% static 'admin-panel-static/app-assets/vendors/js/vendors.min.js' %}"
+            type="text/javascript"></script>
+    <script src="{% static 'admin-panel-static/app-assets/vendors/js/forms/toggle/switchery.min.js' %}"
+            type="text/javascript"></script>
+    <script src="{% static 'admin-panel-static/app-assets/js/scripts/forms/switch.min.js' %}"
+            type="text/javascript"></script>
+    <!-- BEGIN Vendor JS-->
+
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{% static 'admin-panel-static/app-assets/vendors/js/tables/datatable/datatables.min.js' %}"
+            type="text/javascript"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- END: Page Vendor JS-->
+    <script src="{% static 'admin-panel-static/app-assets/js/scripts/tables/datatables/datatable-styling.min.js' %}"
+            type="text/javascript"></script>
+
+    <!-- BEGIN: Theme JS-->
+    <script src="{% static 'admin-panel-static/app-assets/js/core/app-menu.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'admin-panel-static/app-assets/js/core/app.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'admin-panel-static/app-assets/js/scripts/customizer.min.js' %}"
+            type="text/javascript"></script>
+    <script src="{% static 'admin-panel-static/app-assets/vendors/js/jquery.sharrre.js' %}"
+            type="text/javascript"></script>
+    <!-- Select2 -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script>
+        $("#single").select2({
+            placeholder: "لطفا یک شخص را انتخاب کنید",
+            allowClear: true
+        });
+        $("#single2").select2({
+            placeholder: "لطفا یک شخص را انتخاب کنید",
+            allowClear: true
+        });
+        $("#multiple").select2({
+            placeholder: "Select a programming language",
+            allowClear: true
+        });
+    </script>
+    <!-- END: Theme JS-->
+{% endblock %}

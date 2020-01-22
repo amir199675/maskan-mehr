@@ -229,3 +229,24 @@ def All_Families(request,id):
 		'units':units
 	}
 	return render(request,'admin-panel/family/manager/list.html',context)
+
+
+login_required()
+def Manager_Unit_List(request,id):
+
+	logged = Sidbar(request.user)
+	if logged['status'] == 'Manager':
+		apartments = logged['apartments']
+	# return HttpResponse(apartments)
+	else:
+		apartments = None
+
+	select_apartment = get_object_or_404(Apartment, manager_id=request.user, pk=id)
+	unites = Unit.objects.filter(apartment_id=select_apartment)
+
+	context = {
+		'apartments':apartments,
+		'select_apartment':select_apartment,
+		'unites':unites
+	}
+	return render(request,'admin-panel/unit/manager/list.html',context)

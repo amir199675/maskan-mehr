@@ -51,7 +51,17 @@
 
                                         <li><a class="menu-item" href="{% url 'Debt:not-paid' apartment.id %}">بدهکاران شارژ و قبوض آب</a>
                                         </li>
+
                                         <li><a class="menu-item" href="{% url 'Debt:all-family' apartment.id %}">ساکنین</a>
+                                        </li>
+                                        <li><a class="menu-item" href="{% url 'Debt:all-family' apartment.id %}">اضافه کردن واحد</a>
+                                        </li>
+                                        <li><a class="menu-item" href="{% url 'Debt:unit_list' apartment.id %}">لیست واحد ها</a>
+                                        </li>
+
+                                        <li><a class="menu-item" href="{% url 'Debt:all-family' apartment.id %}">اضافه خانوار</a>
+                                        </li>
+                                        <li><a class="menu-item" href="{% url 'Debt:all-family' apartment.id %}">لیست خانوار</a>
                                         </li>
                                     </ul>
                                 </li>

@@ -30,6 +30,8 @@ class Family (models.Model):
 	def __str__(self):
 		return self.protector.get_full_name() + ' ' + str(self.number) + ' ' + self.protector.username
 
+	def family_name(self):
+		return  'خانواده ' + self.protector.last_name
 
 def delete_image(path):
 	if os.path.isfile(path):

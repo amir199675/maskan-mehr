@@ -1,0 +1,429 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html class="loading" lang="fa" data-textdirection="rtl">
+<!-- BEGIN: Head-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description"
+          content="Chameleon Admin is a modern Bootstrap 4 webapp &amp; admin dashboard html template with a large number of components, elegant design, clean and organized code.">
+    <meta name="keywords"
+          content="admin template, Chameleon admin template, dashboard template, gradient admin template, responsive admin template, webapp, eCommerce dashboard, analytic dashboard">
+    <meta name="author" content="amir derakhshanfar">
+    <title>{% block title %}
+        {{ select_apartment }}
+    {% endblock %}
+    </title>
+    <link rel="apple-touch-icon" href="{% static 'images/logo.png' %}">
+    <link rel="shortcut icon" type="image/x-icon"
+          href="{% static 'images/logo.png' %}">
+
+    <link href="{% static 'admin-panel-static/app-assets/css-rtl/Vazir-FD.css' %}" rel='stylesheet' type='text/css'>
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700"
+          rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'admin-panel-static/app-assets/vendors/css/vendors-rtl.min.css' %}">
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'admin-panel-static/app-assets/vendors/css/forms/toggle/switchery.min.css' %}">
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'admin-panel-static/app-assets/css-rtl/plugins/forms/switch.min.css' %}">
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'admin-panel-static/app-assets/css-rtl/core/colors/palette-switch.min.css' %}">
+
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'admin-panel-static/app-assets/css-rtl/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'admin-panel-static/app-assets/css-rtl/bootstrap-extended.min.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'admin-panel-static/app-assets/css-rtl/colors.min.css' %}">
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'admin-panel-static/app-assets/css-rtl/components.min.css' %}">
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'admin-panel-static/app-assets/css-rtl/custom-rtl.min.css' %}">
+
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'admin-panel-static/app-assets/css-rtl/core/menu/menu-types/horizontal-menu.min.css' %}">
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'admin-panel-static/app-assets/css-rtl/core/colors/palette-gradient.min.css' %}">
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'admin-panel-static/app-assets/css-rtl/plugins/animate/animate.min.css' %}">
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'admin-panel-static/app-assets/fonts/simple-line-icons/style.min.css' %}">
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'admin-panel-static/app-assets/css-rtl/plugins/forms/wizard.min.css' %}">
+
+    <!-- END: Page CSS-->
+    <!--for datepicker-->
+    <link href='{% static 'date/css/fontawesome/css/font-awesome.min.css' %}' rel='stylesheet'/>
+
+    <link href="{% static "date/css/vertical-responsive-menu.min.css" %}" rel="stylesheet"/>
+
+    <link href="{% static 'date/css/prism.css' %}" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="{% static 'date/css/persianDatepicker-default.css' %}"/>
+
+    <link rel="stylesheet" href="{% static 'date/css/persianDatepicker-dark.css' %}"/>
+    <link rel="stylesheet" href="{% static 'date/css/persianDatepicker-latoja.css' %}"/>
+    <link rel="stylesheet" href="{% static 'date/css/persianDatepicker-melon.css' %}"/>
+    <link rel="stylesheet" href="{% static 'date/css/persianDatepicker-lightorang.css' %}"/>
+    <script src="{% static 'date/js/prism.js' %}"></script>
+    <script src="{% static 'date/js/vertical-responsive-menu.min.js' %}"></script>
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'admin-panel-static/assets/css/style-rtl.css' %}">
+    <!-- END: Custom CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+<body class="horizontal-layout horizontal-menu 2-columns  " data-open="hover" data-menu="horizontal-menu"
+      data-color="bg-gradient-x-purple-blue" data-col="2-columns">
+
+
+<!-- BEGIN: Header-->
+<!-- fixed-top-->
+<!-- END: Header-->
+
+<nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow navbar-static-top navbar-light navbar-brand-center"
+     data-nav="brand-center">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs"
+                                                                  href="#"><i class="ft-menu font-large-1"></i></a></li>
+            <li class="nav-item"><a class="navbar-brand" href="index.html"><img class="brand-logo"
+                                                                                alt="creaative admin logo"
+                                                                                src="{% static 'images/logo.png' %}">
+                <h3 class="brand-text">صفحه مدیریت {{ selec_apartment }}</h3></a></li>
+            <li class="nav-item d-md-none"><a class="nav-link open-navbar-container" data-toggle="collapse"
+                                              data-target="#navbar-mobile"><i class="la la-ellipsis-v"></i></a></li>
+        </ul>
+    </div>
+    <div class="navbar-wrapper">
+        <div class="navbar-container content">
+            <div class="collapse navbar-collapse" id="navbar-mobile">
+                <ul class="nav navbar-nav mr-auto float-left">
+                </ul>
+                <ul class="nav navbar-nav float-right">
+
+                    <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#"
+                                                                           data-toggle="dropdown"><i
+                            class="ficon ft-bell bell-shake" id="notification-navbar-link"></i><span
+                            class="badge badge-pill badge-sm badge-danger badge-up badge-glow">5</span></a>
+                        <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                            <div class="arrow_box_right">
+                                <li class="dropdown-menu-header">
+                                    <h6 class="dropdown-header m-0"><span class="grey darken-2">اطلاعیه</span></h6>
+                                </li>
+                                <li class="scrollable-container media-list w-100 ps"><a href="javascript:void(0)">
+                                    <div class="media">
+                                        <div class="media-left align-self-center"><i
+                                                class="ft-share info font-medium-4 mt-2"></i></div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading info">سفارش جدید دریافت شده</h6>
+                                            <p class="notification-text font-small-3 text-muted text-bold-600">لورم
+                                                ایپسوم متن ساختگی است!</p>
+                                            <small>
+                                                <time class="media-meta text-muted"
+                                                      datetime="2015-06-11T18:29:20+08:00">3:30 صبح
+                                                </time>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </a><a href="javascript:void(0)">
+                                    <div class="media">
+                                        <div class="media-left align-self-center"><i
+                                                class="ft-save font-medium-4 mt-2 warning"></i></div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading warning">کاربر جدید ثبت شده است</h6>
+                                            <p class="notification-text font-small-3 text-muted text-bold-600">لورم
+                                                ایپسوم متن ساختگی است.</p>
+                                            <small>
+                                                <time class="media-meta text-muted"
+                                                      datetime="2015-06-11T18:29:20+08:00">10:05 عصر
+                                                </time>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </a><a href="javascript:void(0)">
+                                    <div class="media">
+                                        <div class="media-left align-self-center"><i
+                                                class="ft-repeat font-medium-4 mt-2 danger"></i></div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading danger">خرید جدید</h6>
+                                            <p class="notification-text font-small-3 text-muted text-bold-600">لورم
+                                                ایپسوم متن ساختگی است?</p>
+                                            <small>
+                                                <time class="media-meta text-muted"
+                                                      datetime="2015-06-11T18:29:20+08:00">دیروز
+                                                </time>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </a><a href="javascript:void(0)">
+                                    <div class="media">
+                                        <div class="media-left align-self-center"><i
+                                                class="ft-shopping-cart font-medium-4 mt-2 primary"></i></div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading primary">مورد جدید در سبد خرید شما</h6>
+                                            <small>
+                                                <time class="media-meta text-muted"
+                                                      datetime="2015-06-11T18:29:20+08:00">هفته گذشته
+                                                </time>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </a><a href="javascript:void(0)">
+                                    <div class="media">
+                                        <div class="media-left align-self-center"><i
+                                                class="ft-heart font-medium-4 mt-2 info"></i></div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading info">فروش جدید</h6>
+                                            <small>
+                                                <time class="media-meta text-muted"
+                                                      datetime="2015-06-11T18:29:20+08:00">ماه گذشته
+                                                </time>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </a>
+                                    <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+                                        <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                                    </div>
+                                    <div class="ps__rail-y" style="top: 0px; right: 0px;">
+                                        <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-menu-footer"><a class="dropdown-item info text-right pr-1"
+                                                                    href="javascript:void(0)">خواندن همه</a></li>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#"
+                                                                           data-toggle="dropdown"><i
+                            class="ficon ft-mail"> </i></a>
+                        <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                            <div class="arrow_box_right">
+                                <li class="dropdown-menu-header">
+                                    <h6 class="dropdown-header m-0"><span class="grey darken-2">پیام ها</span></h6>
+                                </li>
+                                <li class="scrollable-container media-list w-100 ps"><a href="javascript:void(0)">
+                                    <div class="media">
+                                        <div class="media-left"><span class="avatar avatar-sm rounded-circle"><img
+                                                src="../../../app-assets/images/portrait/small/avatar-s-6.png"
+                                                alt="avatar"></span></div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading text-bold-700">سارا مونتری<i
+                                                    class="ft-circle font-small-2 success float-right"></i></h6>
+                                            <p class="notification-text font-small-3 text-muted text-bold-600">همه چیز
+                                                خوب است من ارائه خواهم داد...</p>
+                                            <small>
+                                                <time class="media-meta text-muted"
+                                                      datetime="2015-06-11T18:29:20+08:00">3:55 صبح
+                                                </time>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </a><a href="javascript:void(0)">
+                                    <div class="media">
+                                        <div class="media-left"><span class="avatar avatar-sm rounded-circle"><span
+                                                class="media-object rounded-circle text-circle bg-warning">E</span></span>
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading text-bold-700">الیزا الیوت<i
+                                                    class="ft-circle font-small-2 danger float-right"></i></h6>
+                                            <p class="notification-text font-small-3 text-muted text-bold-600">باشه. در
+                                                اینجا برخی از جزئیات بیشتر است...</p>
+                                            <small>
+                                                <time class="media-meta text-muted"
+                                                      datetime="2015-06-11T18:29:20+08:00">2:10 عصر
+                                                </time>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </a><a href="javascript:void(0)">
+                                    <div class="media">
+                                        <div class="media-left"><span class="avatar avatar-sm rounded-circle"><img
+                                                src="../../../app-assets/images/portrait/small/avatar-s-3.png"
+                                                alt="avatar"></span></div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading text-bold-700">کلی رییس<i
+                                                    class="ft-circle font-small-2 warning float-right"></i></h6>
+                                            <p class="notification-text font-small-3 text-muted text-bold-600">یک بار چک
+                                                کنید و به من اطلاع دهید...</p>
+                                            <small>
+                                                <time class="media-meta text-muted"
+                                                      datetime="2015-06-11T18:29:20+08:00">دیروز
+                                                </time>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </a><a href="javascript:void(0)">
+                                    <div class="media">
+                                        <div class="media-left"><span class="avatar avatar-sm rounded-circle"><img
+                                                src="../../../app-assets/images/portrait/small/avatar-s-19.png"
+                                                alt="avatar"></span></div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading text-bold-700">تونی دیپ<i
+                                                    class="ft-circle font-small-2 danger float-right"></i></h6>
+                                            <p class="notification-text font-small-3 text-muted text-bold-600">ما شروع
+                                                به توسعه پروژه جدید خواهیم کرد...</p>
+                                            <small>
+                                                <time class="media-meta text-muted"
+                                                      datetime="2015-06-11T18:29:20+08:00">جمعه
+                                                </time>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </a>
+                                    <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+                                        <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                                    </div>
+                                    <div class="ps__rail-y" style="top: 0px; right: 0px;">
+                                        <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-menu-footer"><a class="dropdown-item text-right info pr-1"
+                                                                    href="javascript:void(0)">خواندن همه</a></li>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link"
+                                                                   href="#" data-toggle="dropdown"> <span
+                            class="nav-link nav-link-label"><i class="ficon ft-user"> </i></span></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="arrow_box_right"><a class="dropdown-item" href="#"><span
+                                    class="avatar avatar-online"><span
+                                    class="user-name text-bold-700 ml-1">{{ request.user.get_full_name }}</span></span></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="user-profile.html"><i class="ft-user"></i> ویرایش مشخصات</a><a
+                                        class="dropdown-item" href="email-application.html"><i class="ft-mail"></i>
+                                    صندوق ورودی من</a><a class="dropdown-item" href="project-summary.html"><i
+                                        class="ft-check-square"></i> وظیفه</a><a class="dropdown-item"
+                                                                                 href="gap-application.html"><i
+                                        class="ft-message-square"></i> نمودار</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/Account/logout/?next={{ request.path }}"><i
+                                        class="ft-power"></i> خروج</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- BEGIN: Main Menu-->
+<div class="header-navbar navbar-expand-sm navbar navbar-horizontal navbar-fixed navbar-dark navbar-without-dd-arrow navbar-shadow"
+     role="navigation" data-menu="menu-wrapper">
+    <div class="navbar-container main-menu-content" data-menu="menu-container">
+        <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+            <li class="nav-item"><a class="nav-link" href=""
+                                              ><i class="ft-home"></i><span>پنل ادمین</span></a>
+            </li>
+            <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#"
+                                                                  data-toggle="dropdown"><i class="ft-server"></i><span>واحد</span></a>
+                <ul class="dropdown-menu">
+                    <div class="arrow_box">
+
+                        <li data-menu=""><a class="dropdown-item"
+                                            href=""
+                                            data-toggle="dropdown">اضافه کردن واحد</a>
+                        </li>
+                        <li data-menu=""><a class="dropdown-item"
+                                            href=""
+                                            data-toggle="dropdown">لیست واحدها</a>
+                        </li>
+                        <li data-menu=""><a class="dropdown-item"
+                                            href=""
+                                            data-toggle="dropdown">پیش فروش قبور</a>
+                        </li>
+                        <li data-menu=""><a class="dropdown-item"
+                                            href=""
+                                            data-toggle="dropdown">اضافه کردن خدمات</a>
+                        </li>
+                        <li data-menu=""><a class="dropdown-item"
+                                            href=""
+                                            data-toggle="dropdown">لیست خدمات</a>
+                        </li>
+
+                    </div>
+                </ul>
+            </li>
+            <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#"
+                                                                  data-toggle="dropdown"><i class="ft-layers"></i><span>اطلاعات پایه</span></a>
+                <ul class="dropdown-menu">
+                    <div class="arrow_box">
+
+                        <li data-menu=""><a class="dropdown-item"
+                                            href=""
+                                            data-toggle="dropdown">اطلاعات اشخاص</a>
+                        </li>
+
+                        <li data-menu=""><a class="dropdown-item"
+                                            href=""
+                                            data-toggle="dropdown">اضافه کردن خریدار</a>
+                        </li>
+
+                    </div>
+                </ul>
+            </li>
+            {#            <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#"#}
+            {#                                                                  data-toggle="dropdown"><i class="ft-layers"></i><span>خدمات</span></a>#}
+            {#                <ul class="dropdown-menu">#}
+            {#                    <div class="arrow_box">#}
+            {#                        <li data-menu=""><a class="dropdown-item"#}
+            {#                                            href="{% url 'Site_Panel:sell_service' select_deceased.id %}"#}
+            {#                                            data-toggle="dropdown">خرید خدمات</a>#}
+            {#                        </li>#}
+            {#                        <li data-menu=""><a class="dropdown-item"#}
+            {#                                            href="{% url 'Site_Panel:reserve-service' select_deceased.id %}"#}
+            {#                                            data-toggle="dropdown">خدمات خریداری شده</a>#}
+            {#                        </li>#}
+            {##}
+            {#                    </div>#}
+            {#                </ul>#}
+            {#            </li>#}
+
+        </ul>
+    </div>
+</div>
+<!-- END: Main Menu-->
+
+<!-- BEGIN: Content-->
+{% block content %}
+
+{% endblock %}
+<!-- END: Content-->
+
+{% include 'admin-panel/partial/customizer.html' %}
+
+{% include 'admin-panel/partial/footer.html' %}
+
+
+</body>
+<!-- END: Body-->
+</html>

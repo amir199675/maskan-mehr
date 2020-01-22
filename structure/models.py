@@ -34,4 +34,7 @@ class Unit(models.Model):
 	def __str__(self):
 		return self.apartment_id.name + ' طبقه ' + str(self.floor) + ' پلاک ' + str(self.plaque)
 
+	def address(self):
+		return  ' طبقه ' + str(self.floor) + ' پلاک ' + str(self.plaque)
+
 

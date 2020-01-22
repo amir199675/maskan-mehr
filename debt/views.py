@@ -41,8 +41,9 @@ class Index (View):
 
 	def get(self, request, *args, **kwargs):
 		sliders = Slider.objects.filter(status='Public')
+
 		context = {
-			'message': 'Hello Django!',
+			'index':True,
 		    'sliders':sliders
 				   }
 

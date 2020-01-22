@@ -1,9 +1,10 @@
-<nav class="colorlib-nav" role="navigation">
+{% load static %}
+<nav class="colorlib-nav" style="direction: rtl" role="navigation">
     <div class="top-menu">
         <div class="container">
             <div class="row">
                 <div class="col-xs-2">
-                    <div id="colorlib-logo"><a href="{% url 'Debt:index' %}">مدیسا</a></div>
+                    <div id="colorlib-logo"><a style="display: inline" href="{% url 'Debt:index' %}">مدیسا</a><div style="display: inline" id="colorlib-logo"><img style="display: inline" width="100" height="100" src="{% static 'images/logo.png' %}"></div></div>
                 </div>
                 <div class="col-xs-10 text-right menu-1">
                     <ul>

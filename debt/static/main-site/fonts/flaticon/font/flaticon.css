@@ -1,3 +1,4 @@
+{% load static %}
 	/*
   	Flaticon icon font: Flaticon
   	Creation date: 17/01/2018 04:05
@@ -35,3 +36,4 @@
 .flaticon-crane:before { content: "\f105"; }
 .flaticon-engineering:before { content: "\f106"; }
 .flaticon-engineer:before { content: "\f107"; }
+.flaction-home:before{content: "\f108";}
